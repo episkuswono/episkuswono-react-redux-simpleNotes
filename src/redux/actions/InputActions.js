@@ -8,5 +8,8 @@ export default {
     setInputContent: content => ({
         type: actionTypes.SET_INPUT_CONTENT,
         content
+    }),
+    resetInputs: () => ({
+        type: actionTypes.RESET_INPUT,
     })
 }

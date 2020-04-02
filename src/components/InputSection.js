@@ -9,6 +9,16 @@ const title = useSelector(state => state.inputs.title);
 const content = useSelector(state => state.inputs.content);
 const dispatch = useDispatch();
 
+const addNote = () => {
+    if(title && content){
+        dispatch(noteActions.addNote({
+            title,
+            content
+        }))
+        dispatch(inputActions.resetInputs())
+    }
+}
+
     return(
         <div className="InputSection__container">
             <input type="text" 
@@ -27,12 +37,7 @@ const dispatch = useDispatch();
             >    
             </textarea>
             <button
-                onClick={() => {
-                    dispatch(noteActions.addNote({
-                        title,
-                        content
-                    }))
-                }}
+                onClick={addNote}
             >
                 ADD NOTE
             </button>
