@@ -6,14 +6,14 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.ADD_TODO: {
+        case actionTypes.ADD_NOTE: {
             const notes = state.notes;
             notes.push(action.note);
             return {
                 notes,
             }
         }
-        case actionTypes.UPDATE_TODO: {
+        case actionTypes.UPDATE_NOTE: {
             const {index, note } = action;
             const notes = state.notes;
             notes[index] = note;
@@ -21,7 +21,7 @@ export default (state = initialState, action) => {
                 notes,
             }
         }
-        case actionTypes.REMOVE_TODO: {
+        case actionTypes.REMOVE_NOTE: {
             const { index } = action;
             const notes = state.notes;
             delete notes[index]
