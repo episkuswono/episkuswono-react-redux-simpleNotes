@@ -12,12 +12,17 @@
         font-size: 10pt;
     }
 
-    button {
+    .InputSection_container_btnWrapper {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0.5em;
+        button {
         background-color: black;
         border: none;
         color: white;
         font-size: 10pt;
         border-radius: 0.3em;
         padding: 0.5em;
+        }
     }
 }

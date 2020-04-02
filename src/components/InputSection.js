@@ -5,6 +5,7 @@ import inputActions from '../redux/actions/inputActions';
 import './InputSection.style.scss';
 
 const InputSection = () => {
+const id = useSelector(state => state.inputs.id);
 const title = useSelector(state => state.inputs.title);
 const content = useSelector(state => state.inputs.content);
 const dispatch = useDispatch();
@@ -17,6 +18,10 @@ const addNote = () => {
         }))
         dispatch(inputActions.resetInputs())
     }
+}
+
+const deleteNote = () => {
+
 }
 
     return(
@@ -36,11 +41,22 @@ const addNote = () => {
             }
             >    
             </textarea>
-            <button
+            <div className="InputSection_container_btnWrapper"
+            >
+                <button
                 onClick={addNote}
             >
-                ADD NOTE
+                {id === -1 ? "ADD NOTE" : "UPDATE NOTE"}
             </button>
+            {id !== -1 &&
+            <button
+            onClick={deleteNote}
+            style={{ marginLeft: '1em', backgroundColor: 'red' }}
+            >
+                DELETE NOTE
+            </button> 
+            }
+            </div>
         </div>
     );
 };
