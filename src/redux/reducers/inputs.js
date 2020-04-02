@@ -1,6 +1,7 @@
 import actionTypes from '../actionTypes';
 
 const initialState = {
+    id: -1,
     title: '',
     content: '',
 }
@@ -19,6 +20,13 @@ export default (state = initialState, action) => {
             return{
                 ...state,
                 content,
+            }
+        }
+        case actionTypes.SET_INPUT_ID: {
+            const {id} = action;
+            return{
+                ...state,
+                id,
             }
         }
         case actionTypes.RESET_INPUT:{

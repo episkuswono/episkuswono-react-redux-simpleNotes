@@ -1,11 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import NoteItem from './NoteItem';
+import inputActions from '../redux/actions/inputActions';
 import './NotesSection.style.scss';
 
 const NotesSection = () => {
 
+    const dispatch = useDispatch();
+
     const notes = useSelector(state => state.notes.notes)
+
+    const onItemClicked = (item, index) => {
+        dispatch(inputActions.setInputId(index));
+        dispatch(inputActions.setInputTitle(item.title));
+        dispatch(inputActions.setInputContent(item.content));
+    }
 
     if(notes.length === 0) {
         return (
@@ -21,6 +30,9 @@ const NotesSection = () => {
                 <NoteItem 
                 title={item.title}
                 content={item.content}
+                onItemClicked={() => {
+                    onItemClicked(item, index);
+                }}
                 />
             ))}
         </div>
