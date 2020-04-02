@@ -21,11 +21,16 @@ const addNote = () => {
 }
 
 const updateNote = () => {
-    
+    if(title && content){
+        dispatch(noteActions.updateNote(id, {
+            title, content
+        }))
+        dispatch(inputActions.resetInputs())
+    }
 }
 
 const deleteNote = () => {
-
+    dispatch(noteActions.deleteNote(id))
 }
 
     return(
