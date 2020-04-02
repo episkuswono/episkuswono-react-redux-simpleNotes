@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## Simple Notes
+## Nama : Epis Kuswono
+## Kelas: TI-3A
+## NIM  : 1741720210
 ## Available Scripts
 
 In the project directory, you can run:
