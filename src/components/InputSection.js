@@ -1,9 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import noteActions from '../redux/actions/noteAction';
 import './InputSection.style.scss';
 
 const InputSection = () => {
+const title = useSelector(state => state.inputs.title);
+const content = useSelector(state => state.inputs.content);
 const dispatch = useDispatch();
 
     return(
