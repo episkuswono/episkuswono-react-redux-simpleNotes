@@ -20,6 +20,10 @@ const addNote = () => {
     }
 }
 
+const updateNote = () => {
+    
+}
+
 const deleteNote = () => {
 
 }
@@ -44,7 +48,7 @@ const deleteNote = () => {
             <div className="InputSection_container_btnWrapper"
             >
                 <button
-                onClick={addNote}
+                onClick={id === -1 ? addNote : updateNote}
             >
                 {id === -1 ? "ADD NOTE" : "UPDATE NOTE"}
             </button>
